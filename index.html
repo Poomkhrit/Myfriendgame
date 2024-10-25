@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Dress-up Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-menu">
+        <img src="Mainmenu.png" alt="Main Menu Image">
+        <button onclick="enterGame()">Play</button>
+    </div>
+
+    <div class="game-container">
+        <div class="base-container">
+            <!-- Base character image -->
+            <img id="base-image" src="Base.PNG" alt="Base Image">
+
+            <!-- Existing backpack images -->
+            <img id="backpack-left1" class="backpack" src="BackpackL.PNG" alt="Left Backpack" style="visibility: hidden;">
+            <img id="backpack-left2" class="backpack" src="BackpackL2.PNG" alt="Left Backpack" style="visibility: hidden;">
+            <img id="backpack-right1" class="backpack" src="BackpackR1.PNG" alt="Right Backpack" style="visibility: hidden;">
+
+            <!-- Existing shoes -->
+            <img id="shoes-left" class="shoes" src="ShoesL.PNG" alt="Left Shoes" style="visibility: hidden;">
+            <img id="shoes-right" class="shoes" src="ShoesR.PNG" alt="Right Shoes" style="visibility: hidden;">
+
+            <!-- Existing suit -->
+            <img id="suit-right" class="suit" src="SuitR.PNG" alt="Right Suit" style="visibility: hidden;">
+
+            <!-- Existing bag images -->
+            <img id="bag-left1" class="bag" src="BagL2.PNG" alt="Left Bag" style="visibility: hidden;">
+            <img id="bag-left2" class="bag" src="BagL3.PNG" alt="Left Bag" style="visibility: hidden;">
+            <img id="bag-right" class="bag" src="BagR.PNG" alt="Right Bag" style="visibility: hidden;">
+
+            <!-- Existing cap images -->
+            <img id="cap-left" class="cap" src="CapL2.PNG" alt="Left Cap" style="visibility: hidden;">
+            <img id="cap-right1" class="cap" src="CapR.PNG" alt="Right Cap" style="visibility: hidden;">
+            <img id="cap-right2" class="cap" src="CapR2.PNG" alt="Right Cap" style="visibility: hidden;">
+
+            <!-- Existing scarf images -->
+            <img id="scarf-left" class="scarf" src="ScarfL.PNG" alt="Left Scarf" style="visibility: hidden;">
+            <img id="scarf-left2" class="scarf" src="ScarfL2.PNG" alt="Left Scarf" style="visibility: hidden;">
+
+            <!-- New FaceL (Left Faces) -->
+            <img id="face-left1" class="face-left" src="FaceL.PNG" alt="Face Left 1" style="visibility: hidden;">
+            <img id="face-left2" class="face-left" src="FaceL2.PNG" alt="Face Left 2" style="visibility: hidden;">
+            <img id="face-left3" class="face-left" src="FaceL3.PNG" alt="Face Left 3" style="visibility: hidden;">
+            <img id="face-left4" class="face-left" src="FaceL4.PNG" alt="Face Left 4" style="visibility: hidden;">
+            <img id="face-left5" class="face-left" src="FaceL5.PNG" alt="Face Left 5" style="visibility: hidden;">
+
+            <!-- New FaceR (Right Faces) -->
+            <img id="face-right1" class="face-right" src="FaceR.PNG" alt="Face Right 1" style="visibility: hidden;">
+            <img id="face-right2" class="face-right" src="FaceR2.PNG" alt="Face Right 2" style="visibility: hidden;">
+            <img id="face-right3" class="face-right" src="FaceR3.PNG" alt="Face Right 3" style="visibility: hidden;">
+            <img id="face-right4" class="face-right" src="FaceR4.PNG" alt="Face Right 4" style="visibility: hidden;">
+            <img id="face-right5" class="face-right" src="FaceR5.PNG" alt="Face Right 5" style="visibility: hidden;">
+        </div>
+
+        <div class="controls">
+            <!-- Existing controls for backpacks -->
+            <div class="category">
+                <h3>Backpacks</h3>
+                <div class="section">
+                    <img src="BackpackL.PNG" alt="Left Backpack Button" onclick="toggleItem('backpack-left1', 'backpack-left')">
+                    <img src="BackpackL2.PNG" alt="Left Backpack Button" onclick="toggleItem('backpack-left2', 'backpack-left')">
+                    <img src="BackpackR1.PNG" alt="Right Backpack Button" onclick="toggleItem('backpack-right1', 'backpack-right')">
+                </div>
+            </div>
+
+            <!-- Existing controls for shoes -->
+            <div class="category">
+                <h3>Shoes</h3>
+                <div class="section">
+                    <img src="ShoesL.PNG" alt="Left Shoes Button" onclick="toggleItem('shoes-left', 'shoes-left')">
+                    <img src="ShoesR.PNG" alt="Right Shoes Button" onclick="toggleItem('shoes-right', 'shoes-right')">
+                </div>
+            </div>
+
+            <!-- Existing controls for suits -->
+            <div class="category">
+                <h3>Suits</h3>
+                <div class="section">
+                    <img src="SuitR.PNG" alt="Right Suit Button" onclick="toggleItem('suit-right', 'suit-right')">
+                </div>
+            </div>
+
+            <!-- Existing controls for bags -->
+            <div class="category">
+                <h3>Bags</h3>
+                <div class="section">
+                    <img src="BagL2.PNG" alt="Left Bag Button" onclick="toggleItem('bag-left1', 'bag-left')">
+                    <img src="BagL3.PNG" alt="Left Bag Button" onclick="toggleItem('bag-left2', 'bag-left')">
+                    <img src="BagR.PNG" alt="Right Bag Button" onclick="toggleItem('bag-right', 'bag-right')">
+                </div>
+            </div>
+
+            <!-- Existing controls for caps -->
+            <div class="category">
+                <h3>Caps</h3>
+                <div class="section">
+                    <img src="CapL2.PNG" alt="Left Cap Button" onclick="toggleItem('cap-left', 'cap-left')">
+                    <img src="CapR.PNG" alt="Right Cap Button" onclick="toggleItem('cap-right1', 'cap-right')">
+                    <img src="CapR2.PNG" alt="Right Cap Button" onclick="toggleItem('cap-right2', 'cap-right')">
+                </div>
+            </div>
+
+            <!-- Existing controls for scarves -->
+            <div class="category">
+                <h3>Scarves</h3>
+                <div class="section">
+                    <img src="ScarfL.PNG" alt="Left Scarf Button" onclick="toggleItem('scarf-left', 'scarf-left')">
+                    <img src="ScarfL2.PNG" alt="Left Scarf Button" onclick="toggleItem('scarf-left2', 'scarf-left')">
+                </div>
+            </div>
+
+            <!-- New controls for FaceL (Left Faces) -->
+            <div class="category">
+                <h3>Face (Left)</h3>
+                <div class="section">
+                    <img src="FaceL.PNG" alt="Face Left 1 Button" onclick="toggleItem('face-left1', 'face-left')">
+                    <img src="FaceL2.PNG" alt="Face Left 2 Button" onclick="toggleItem('face-left2', 'face-left')">
+                    <img src="FaceL3.PNG" alt="Face Left 3 Button" onclick="toggleItem('face-left3', 'face-left')">
+                    <img src="FaceL4.PNG" alt="Face Left 4 Button" onclick="toggleItem('face-left4', 'face-left')">
+                    <img src="FaceL5.PNG" alt="Face Left 5 Button" onclick="toggleItem('face-left5', 'face-left')">
+                </div>
+            </div>
+
+            <!-- New controls for FaceR (Right Faces) -->
+            <div class="category">
+                <h3>Face (Right)</h3>
+                <div class="section">
+                    <img src="FaceR.PNG" alt="Face Right 1 Button" onclick="toggleItem('face-right1', 'face-right')">
+                    <img src="FaceR2.PNG" alt="Face Right 2 Button" onclick="toggleItem('face-right2', 'face-right')">
+                    <img src="FaceR3.PNG" alt="Face Right 3 Button" onclick="toggleItem('face-right3', 'face-right')">
+                    <img src="FaceR4.PNG" alt="Face Right 4 Button" onclick="toggleItem('face-right4', 'face-right')">
+                    <img src="FaceR5.PNG" alt="Face Right 5 Button" onclick="toggleItem('face-right5', 'face-right')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
